@@ -1,1 +1,17 @@
-<h1>Hello, world!</h1>
+<title>HVC Camporall</title>
+<link rel="stylesheet" href="master.css" type="text/css" media="screen" title="no title" charset="utf-8">
+<script text="text/javascript" charset="utf-8" src="phonegap.js></script>
+
+<body onload="init();" id="stage">
+	<h1>Hello, world!</h1>
+	<div id="info">
+		<h4>Platform: <span id="platform"> </span></h4>
+	</div>
+
+	<dl id="accel-data">
+		<dt>X:</dt><dd id="x"> </dd>
+		<dt>Y:</dt><dd id="y"> </dd>
+		<dt>Z:</dt><dd id="z"> </dd>
+	</dl>
+	<a href="#" onclick="watchAccel();">Watch Accelerometer</a>
+</body>
