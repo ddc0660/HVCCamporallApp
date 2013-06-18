@@ -14,4 +14,8 @@
         David Campbell 
     </author>
 	
+	<plugins>
+		<plugin name="Device" value="org.apache.cordova.Device" />
+	</plugins>
+	
 </widget>
