@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-    <widget xmlns = "http://www.w3.org/ns/widgets"
+
+<widget xmlns = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "org.hudsonvalleyscouting.camporall"
         version   = "0.0.1">
@@ -13,7 +14,7 @@
     <author href="#" email="david.d.campbell@gmail.com">
         David Campbell 
     </author>
-	
+        
 	<plugins>
 		<plugin name="Device" value="org.apache.cordova.Device" />
 	</plugins>
