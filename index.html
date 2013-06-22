@@ -9,84 +9,78 @@
         <link href="css/bootstrap.min.css" rel="stylesheet" media="screen"/>
         <link href="css/bootstrap-responsive.min.css" rel="stylesheet" media="screen"/>
         
-        <script type="text/javascript" src="lib/knockout-2.2.1.js"></script>
-        
-        <script>
-            function showAlertBox()
-            {
-                alert("Hello, world!");
+        <style type="text/css">
+            html, body { 
+                height: 100%;
             }
-        </script>
+            
+            #wrap {
+                min-height: 100%;
+                height: auto !important;
+                height: 100%;
+                margin: 0 auto -60px;
+            }
+            
+            #push,
+            #footer { 
+                height: 60px;
+            }
+            #footer {
+                background-color: #f5f5f5;
+            }
+            
+            @media (max-width: 767px) {
+                #footer {
+                    margin-left: -20px;
+                    margin-right: -20px;
+                    padding-left: 20px;
+                    padding-right: 20px;
+                }
+            }
+        </style>
+        
+        <script type="text/javascript" src="lib/knockout-2.2.1.js"></script>
     </head>
 
     <body>    
-        <!-- Bootstrap -->
-        <div id="header" class="row">
+        <div id="wrap">
+            
             <div class="container">
-                Header
-            </div>
-        </div>
-        
-        <div id="body">
+                <div class="page-header">
+                    <h1>Header</h1>
+                    <div id="header" class="navbar">
+                        asdf
+                    </div>
+                </div>
             
-            <tbody data-bind="foreach: events">
-                <tr>
-                    <td data-bind="text: name"></td>
-                    <td data-bind="text: summary"></td>
-                </tr>
-            </tbody>
+            <div id="content">
+                <div class="row">
+                    <div class="span8">
+                        <span id="EventName" data-bind="text: name">Rock Climbing</span> <br/>
+                        <span id="Date" data-bind="text: date">Sat, Jan 1</span> <br/>
+                        <span id="StartTime" data-bind="text: startTime">9am</span> - <span id="EndTime" data-bind="text: endTime">10am</span> <br/>
+                        <span id="Location" data-bind="text: location">Climbing Wall</span>
+                    </div>
+                    <div class="span4">
+                        Favorite Button <br/> 
+                        Twitter Button
+                    </div>
+                </div>    
+                <span id="Description" data-bind="text: description"></span>
+            </div> <!-- /container -->
+                </div>
             
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            <div class="row">
-                <div class="span9">
-                    <span id="EventName" data-bind="text: name"></span>
-                    <span id="Date" data-bind="text: date"></span>
-                    <span id="StartTime" data-bind="text: startTime"></span> - <span id="EndTime" data-bind="text: endTime"></span>
-                    <span id="Location" data-bind="text: location"></span></div>
-                <div class="span3">Favorite Button - Twitter Button</div>
-            </div>    
-            <span id="Description" data-bind="text: description"></span>
-        
-            <!-- JavaScript -->
-            <input type="button" onclick="showAlertBox()" value="Show alert box" />
-            
-            <p>Current version: 6/21 3:37pm</p>
-        </div>
+        <div id="push"></div>
+    </div>
+    
+    
         <div id="footer">
-            <div class="container" style="padding-top: 60;">
-                Footer
+            <div class="container">
+                <p class="muted credit">Footer</p>
             </div>
-        </div>
+        </div> 
         
-        <script type="text/javascript">
-            function Event(name, summary) {
-                var self = this;
-                self.name = name;
-                self.summary = summary;
-            }         
-            
-            
-            function ScheduleViewModel() {
-                var self = this;
-                
-                self.events = ko.observableArray([
-                    new Event("Rock Climbing", "Climb some rock!"),
-                    new Event("Archery", "Shoot some thing!")
-                ]);
-            }
-            
+        <script type="text/javascript">            
             function EventViewModel() {
                 this.name = "Rock Climbing";
                 this.date = "Sat, Jan 1";
@@ -96,7 +90,6 @@
                 this.description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mattis id velit non dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in lorem purus. Morbi eleifend eu urna quis cursus. Integer nibh augue, congue nec nisl eget, imperdiet venenatis dolor. Sed suscipit nec diam non tempor. Phasellus non urna pretium, ullamcorper justo in, condimentum nisl. Donec vulputate erat nec laoreet accumsan. Vestibulum nec tincidunt lacus. Maecenas sit amet urna lectus. Nulla eleifend turpis enim, at pellentesque nulla egestas ac.";
             }
             
-            ko.applyBindings(new ScheduleViewModel());
             ko.applyBindings(new EventViewModel());
         </script>
         
