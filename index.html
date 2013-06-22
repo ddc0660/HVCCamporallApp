@@ -60,14 +60,20 @@
                 <!-- end of navbar -->
                 
                 <!-- begin alerts -->
-                <div class="alert">
+                <div class="alert fade in">
                     <button type="button" class="close" data-dismiss="alert">&times;</button>
-                    <strong>Warning!</strong>This is an important message.
+                    <strong>Warning!</strong> This is an important message.
                 </div>
                 <!-- end alerts -->
                 
             
                 <div id="content">
+                    
+                    
+                    
+                    
+                    
+                    <!-- begin event details -->
                     <div class="row">
                         <div class="span8">
                             <span id="EventName" data-bind="text: name">Rock Climbing</span> <br/>
@@ -108,7 +114,7 @@
             ko.applyBindings(new EventViewModel());
         </script>
         
-        <script type="text/javascript" src="lib/jquery-1.10.0.js"></script>
+        <script type="text/javascript" src="lib/jquery-1.10.0.min.js"></script>
         <script type="text/javascript" src="lib/bootstrap.min.js"></script>
         <script type="text/javascript" src="phonegap.js"></script>
     </body>
