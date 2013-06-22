@@ -28,6 +28,27 @@
         </div>
         
         <div id="body">
+            
+            <tbody data-bind="foreach: events">
+                <tr>
+                    <td data-bind="text: name"></td>
+                    <td data-bind="text: summary"></td>
+                </tr>
+            </tbody>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             <div class="row">
                 <div class="span9">
                     <span id="EventName" data-bind="text: name"></span>
@@ -38,9 +59,6 @@
             </div>    
             <span id="Description" data-bind="text: description"></span>
         
-            <!-- Knockout -->
-            <span data-bind="text: kotest"></span>
-            
             <!-- JavaScript -->
             <input type="button" onclick="showAlertBox()" value="Show alert box" />
             
@@ -53,7 +71,23 @@
         </div>
         
         <script type="text/javascript">
-            function AppViewModel() {
+            function Event(name, summary) {
+                var self = this;
+                self.name = name;
+                self.summary = summary;
+            }         
+            
+            
+            function ScheduleViewModel() {
+                var self = this;
+                
+                self.events = ko.observableArray([
+                    new Event("Rock Climbing", "Climb some rock!"),
+                    new Event("Archery", "Shoot some thing!")
+                ]);
+            }
+            
+            function EventViewModel() {
                 this.name = "Rock Climbing";
                 this.date = "Sat, Jan 1";
                 this.startTime = "1pm";
@@ -62,7 +96,8 @@
                 this.description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mattis id velit non dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in lorem purus. Morbi eleifend eu urna quis cursus. Integer nibh augue, congue nec nisl eget, imperdiet venenatis dolor. Sed suscipit nec diam non tempor. Phasellus non urna pretium, ullamcorper justo in, condimentum nisl. Donec vulputate erat nec laoreet accumsan. Vestibulum nec tincidunt lacus. Maecenas sit amet urna lectus. Nulla eleifend turpis enim, at pellentesque nulla egestas ac.";
             }
             
-            ko.applyBindings(new AppViewModel());
+            ko.applyBindings(new ScheduleViewModel());
+            ko.applyBindings(new EventViewModel());
         </script>
         
         <script type="text/javascript" src="lib/jquery-1.10.0.js"></script>
