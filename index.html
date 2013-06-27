@@ -2,106 +2,68 @@
 <html lang="en">
     <head>
         <title>HVC Camporall</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/master.css">
-        
-        <!-- Bootstrap -->
-        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen"/>
-        <link href="css/bootstrap-responsive.min.css" rel="stylesheet" media="screen"/>
-        
-        <script type="text/javascript" src="lib/knockout-2.2.1.js"></script>
-        
-        <script>
-            function showAlertBox()
-            {
-                alert("Hello, world!");
-            }
-        </script>
+        <link rel="stylesheet" href="css/jquery.mobile-1.3.1.min.css">
+        <script src="lib/jquery-1.10.0.min.js"></script>
+        <script src="lib/jquery.mobile-1.3.1.min.js"></script>
     </head>
-
-    <body>    
-        <!-- Bootstrap -->
-        <div id="header" class="row">
-            <div class="container">
-                Header
-            </div>
-        </div>
+    <body>
+        <div data-role="page">
         
-        <div id="body">
+            <div data-role="header" style="overflow:hidden;">
+                <h1>HV Camporall</h1>
+                <a href="#" data-icon="gear" class="ui-btn-right">Options</a>
+                <div data-role="navbar" data-iconpos="left">
+                    <ul>
+                        <li><a href="#" data-icon="grid">Summary</a></li>
+                        <li><a href="#" data-icon="star" class="ui-btn-active">Favs</a></li>
+                        <li><a href="#" data-icon="gear">Setup</a></li>
+                    </ul>
+                </div><!-- /navbar -->
+            </div><!-- /header -->
             
-            <tbody data-bind="foreach: events">
-                <tr>
-                    <td data-bind="text: name"></td>
-                    <td data-bind="text: summary"></td>
-                </tr>
-            </tbody>
+            <div data-role="content">
+                <p>page content goes here</p>
             
+                <ul data-role="listview" data-inset="true">
+                    <li data-role="list-divider">Friday, October 8, 2010 <span class="ui-li-count">2</span></li>
+                    <li><a href="index.html">
+                        <img src="../../_assets/img/album-bb.jpg">
+                        <h2>Stephen Weber</h2>
+                        <p><strong>You've been invited to a meeting at Filament Group in Boston, MA</strong></p>
+                        <p>Hey Stephen, if you're available at 10am tomorrow, we've got a meeting with the jQuery team.</p>
+                        <p class="ui-li-aside"><strong>3:00</strong>PM</p>
+                    </a></li>
+                    <li><a href="index.html">
+                        <img src="../../_assets/img/album-bb.jpg">
+                        <h2>jQuery Team</h2>
+                        <p><strong>Boston Conference Planning</strong></p>
+                        <p>In preparation for the upcoming conference in Boston, we need to start gathering a list of sponsors and speakers.</p>
+                        <p class="ui-li-aside"><strong>9:18</strong>AM</p>
+                    </a></li>
+                    <li data-role="list-divider">Thursday, October 7, 2010 <span class="ui-li-count">1</span></li>
+                    <li><a href="index.html">
+                        <img src="../../_assets/img/album-bb.jpg">
+                        <h2>Avery Walker</h2>
+                        <p><strong>Re: Dinner Tonight</strong></p>
+                        <p>Sure, let's plan on meeting at Highland Kitchen at 8:00 tonight. Can't wait! </p>
+                        <p class="ui-li-aside"><strong>4:48</strong>PM</p>
+                    </a></li>
+                </ul>
             
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            <div class="row">
-                <div class="span9">
-                    <span id="EventName" data-bind="text: name"></span>
-                    <span id="Date" data-bind="text: date"></span>
-                    <span id="StartTime" data-bind="text: startTime"></span> - <span id="EndTime" data-bind="text: endTime"></span>
-                    <span id="Location" data-bind="text: location"></span></div>
-                <div class="span3">Favorite Button - Twitter Button</div>
-            </div>    
-            <span id="Description" data-bind="text: description"></span>
-        
-            <!-- JavaScript -->
-            <input type="button" onclick="showAlertBox()" value="Show alert box" />
-            
-            <p>Current version: 6/21 3:37pm</p>
-        </div>
-        <div id="footer">
-            <div class="container" style="padding-top: 60;">
-                Footer
-            </div>
-        </div>
-        
-        <script type="text/javascript">
-            function Event(name, summary) {
-                var self = this;
-                self.name = name;
-                self.summary = summary;
-            }         
+            </div> <!-- /content -->
             
             
-            function ScheduleViewModel() {
-                var self = this;
-                
-                self.events = ko.observableArray([
-                    new Event("Rock Climbing", "Climb some rock!"),
-                    new Event("Archery", "Shoot some thing!")
-                ]);
-            }
             
-            function EventViewModel() {
-                this.name = "Rock Climbing";
-                this.date = "Sat, Jan 1";
-                this.startTime = "1pm";
-                this.endTime = "2pm";
-                this.location = "Climbing Wall";
-                this.description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mattis id velit non dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in lorem purus. Morbi eleifend eu urna quis cursus. Integer nibh augue, congue nec nisl eget, imperdiet venenatis dolor. Sed suscipit nec diam non tempor. Phasellus non urna pretium, ullamcorper justo in, condimentum nisl. Donec vulputate erat nec laoreet accumsan. Vestibulum nec tincidunt lacus. Maecenas sit amet urna lectus. Nulla eleifend turpis enim, at pellentesque nulla egestas ac.";
-            }
             
-            ko.applyBindings(new ScheduleViewModel());
-            ko.applyBindings(new EventViewModel());
-        </script>
-        
-        <script type="text/javascript" src="lib/jquery-1.10.0.js"></script>
-        <script type="text/javascript" src="lib/bootstrap.min.js"></script>
+            
+            <div data-role="footer">
+                <h4>page footer</h4>
+            </div> <!-- /footer -->
+            
+            
+        </div> <!-- /page -->
         <script type="text/javascript" src="phonegap.js"></script>
     </body>
 </html>
